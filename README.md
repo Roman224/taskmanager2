@@ -1,6 +1,11 @@
 # taskmanager2
 
 
+!!!!! IT WILL BE MORE UPDATES !!!!!
+
+
+
+
 1. cd taskamanger_2 
 2. Deschidem proiectul (django-admin startproject s,,main2’’)
 3. django-admin startapp app2
