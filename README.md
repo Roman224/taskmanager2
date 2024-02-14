@@ -6,9 +6,9 @@
 
 
 
-1. cd taskamanger_2 
-2. Deschidem proiectul (django-admin startproject s,,main2’’)
-3. django-admin startapp app2
+1. cd taskamanger2 
+2. Deschidem proiectul (django-admin startproject taskmanager2)
+3. django-admin startapp main2
 4. Dupa in [settings.py](http://settings.py) adaugam aplicatia in INSTALLED_APPS, ca in next example:
 
 ```python
@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app2',
+    'main2',
 ]
 ```
 
@@ -63,11 +63,11 @@ urlpatterns = [
 
 ```python
 from django.urls import path
-from.import views
+from . import views
 
 urlpatterns = [
     path('', views.home, name = 'home'),
-    path('room/<str:pk>/', views.room, room = 'room')
+    path('room/<str:pk>/', views.room, name = 'room')
 ]
 ```
 
@@ -90,3 +90,9 @@ def room(request, pk):
     context = {'room': room}
     return render(request,'main2/room.html', context)
 ```
+
+1. python3 [manage.py](http://manage.py) makemigrations
+2. python3 [manage.py](http://manage.py) migrate
+3. python3 [manage.py](http://manage.py) createsuperuser (deja adaugam userul si parola)
+4. python3 [manage.py](http://manage.py) runserver
+5. deja deschidem in [localhost](http://localhost) si intram in /admin (ex: http://127.0.0.1:8000/admin/) si ne logam
