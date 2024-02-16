@@ -120,4 +120,5 @@ TEMPLATES = [
 1. Create dir → main2 → templates
 2. In templates creem → main2 (cu numele aplicatiei)
 3. In main2 recent creat, facem urmatoarele files: home.html, main.html, navbar.html, room.html
-4. python3 [manage.py](http://manage.py) runserver
+4. Punem aceste 4 fileuri in templates si in main2 din templates
+5. python3 [manage.py](http://manage.py) runserver
