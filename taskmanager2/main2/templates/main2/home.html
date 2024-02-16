@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<h1 style="background-color: DodgerBlue"><b>CURSE</b></h1>
+
+<div>
+    <div>
+        {% for room in rooms %}
+            <div>
+              <h2>{{ room.id }} -- <a href = "/room/{{ room.id }}">{{ room.name }} </a></h2>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

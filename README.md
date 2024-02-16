@@ -96,3 +96,28 @@ def room(request, pk):
 3. python3 [manage.py](http://manage.py) createsuperuser (deja adaugam userul si parola)
 4. python3 [manage.py](http://manage.py) runserver
 5. deja deschidem in [localhost](http://localhost) si intram in /admin (ex: http://127.0.0.1:8000/admin/) si ne logam
+
+6. folderul templates → in [settings.py](http://settings.py) la sectiunea ,,TEMPLATES” in rindul 2 cu DIRS modificam: 'DIRS': [BASE_DIR/'templates'],
+
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR/'templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+
+1. Create dir → main2 → templates
+2. In templates creem → main2 (cu numele aplicatiei)
+3. In main2 recent creat, facem urmatoarele files: home.html, main.html, navbar.html, room.html
+4. python3 [manage.py](http://manage.py) runserver
