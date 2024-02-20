@@ -122,3 +122,61 @@ TEMPLATES = [
 3. In main2 recent creat, facem urmatoarele files: home.html, main.html, navbar.html, room.html
 4. Punem aceste 4 fileuri in templates si in main2 din templates
 5. python3 [manage.py](http://manage.py) runserver
+
+HTML SECTIOM
+
+home.html - 
+
+{% extends 'main.html' %}
+{% block content %}
+
+<h1 style="background-color: DodgerBlue"><b>CURSE</b></h1>
+
+<div>
+    <div>
+        {% for room in rooms %}
+            <div>
+              <h2>{{ room.id }} -- <a href = "/room/{{ room.id }}">{{ room.name }} </a></h2>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
+
+
+
+main.html: 
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>taskmanager4</title>
+    <!-- <link rel="stylesheet" type="text/css"media="screen" href="main.css">-->
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+{% include 'navbar.html' %}
+{% block content %}
+
+{% endblock content %}
+</body>
+</html>
+
+
+navbar.html: 
+
+<a href="/">
+    <h1 style="background-color: YELLOW"><b>ORAR</b></h1>
+</a>
+
+<hr>
+
+
+room.html:
+
+{% extends 'main.html' %}
+{% block content %}
+<h1 style="background-color: Tomato">{{ room.name}} </h1>
+{% endblock content %}
